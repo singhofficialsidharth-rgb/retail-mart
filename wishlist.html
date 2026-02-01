@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist - RetailMart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner row">
+        <a class="logo" href="index.html"
+          ><img
+            src="retailmartlogo.png"
+            alt="RetailMart logo"
+            class="logo-img"
+            aria-hidden="true"
+          />
+          <span class="brand-text">Retail<span>Mart</span></span></a
+        >
+
+        <div class="search-wrap">
+          <form class="search-form" onsubmit="return false;">
+            <span class="search-icon" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 21l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search products..."
+              class="search"
+              aria-label="Search products"
+            />
+            <button
+              type="button"
+              class="search-clear"
+              aria-label="Clear search"
+              title="Clear"
+              hidden
+            >
+              ✕
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-actions row">
+          <button
+            class="btn btn-ghost cart-btn"
+            onclick="window.location='cart.html'"
+          >
+            🛒 <span class="sr-only">Cart</span> <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist container">
+      <h1>My Wishlist</h1>
+      <p class="muted">Items you've saved for later.</p>
+
+      <!-- Empty Wishlist State -->
+      <div id="emptyWishlist" class="empty-state">
+        <div class="empty-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.318 6.318C3.90009 6.73587 3.56863 7.23191 3.34254 7.77705C3.11645 8.32219 3 8.90343 3 9.49087C3 10.0783 3.11645 10.6595 3.34254 11.2047C3.56863 11.7498 3.90009 12.2459 4.318 12.6638L12 20.3458L19.682 12.6638C20.0999 12.2459 20.4314 11.7498 20.6575 11.2047C20.8836 10.6595 21 10.0783 21 9.49087C21 8.90343 20.8836 8.32219 20.6575 7.77705C20.4314 7.23191 20.0999 6.73587 19.682 6.318C19.2641 5.90009 18.7681 5.56863 18.223 5.34254C17.6778 5.11645 17.0966 5 16.5091 5C15.9217 5 15.3405 5.11645 14.7953 5.34254C14.2502 5.56863 13.7541 5.90009 13.3362 6.318L12 7.65482L10.6638 6.318C10.2459 5.90009 9.74985 5.56863 9.2047 5.34254C8.65955 5.11645 8.07828 5 7.49087 5C6.90343 5 6.32219 5.11645 5.77705 5.34254C5.23191 5.56863 4.73587 5.90009 4.318 6.318Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Your wishlist is empty</h3>
+        <p>Save items you love for later by clicking the heart icon on products.</p>
+        <a href="shop.html" class="btn btn-primary">Browse Products</a>
+      </div>
+
+      <!-- Wishlist Items Grid -->
+      <div id="wishlistItems" class="products wishlist-grid">
+        <!-- Items will be populated by JavaScript -->
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="col">
+          <a class="logo" href="index.html"
+            ><img src="retailmartlogo.png" alt="RetailMart logo" class="logo-img" />
+            <span class="brand-text">Retail<span>Mart</span></span></a
+          >
+          <p class="muted" style="max-width: 320px; margin-top: 8px">
+            Everyday essentials delivered fast. Quality products at great
+            prices.
+          </p>
+        </div>
+
+        <div class="col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Wearables</a></li>
+            <li><a href="#">Shoes</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact</h4>
+          <p class="muted">support@retailmart.example</p>
+          <p class="muted">© 2025 RetailMart</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

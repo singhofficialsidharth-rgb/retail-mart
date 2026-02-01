@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - RetailMart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner row">
+        <a class="logo" href="index.html"
+          ><img
+            src="retailmartlogo.png"
+            alt="RetailMart logo"
+            class="logo-img"
+            aria-hidden="true"
+          />
+          <span class="brand-text">Retail<span>Mart</span></span></a
+        >
+
+        <div class="search-wrap">
+          <form class="search-form" onsubmit="return false;">
+            <span class="search-icon" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 21l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search products..."
+              class="search"
+              aria-label="Search products"
+            />
+            <button
+              type="button"
+              class="search-clear"
+              aria-label="Clear search"
+              title="Clear"
+              hidden
+            >
+              ✕
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-actions row">
+          <button
+            class="btn btn-ghost cart-btn"
+            onclick="window.location='cart.html'"
+          >
+            🛒 <span class="sr-only">Cart</span> <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shop Section -->
+    <section class="shop container">
+      <h1>Shop Our Products</h1>
+      <p class="muted">Discover amazing deals on daily essentials and more.</p>
+      <div class="shop-controls">
+        <div class="filter-sort">
+          <label for="categoryFilter">Filter by Category:</label>
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="sports">Sports</option>
+            <option value="home">Home & Kitchen</option>
+            <option value="accessories">Accessories</option>
+          </select>
+        </div>
+        <div class="filter-sort">
+          <label for="sortOptions">Sort by:</label>
+          <select id="sortOptions">
+            <option value="default">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
+        </div>
+      </div>
+      <div class="products">
+        <div class="products">
+
+  <!-- PRODUCT 1 -->
+  <div class="product card" data-id="1" data-name="Wireless Headphones" data-price="1999" data-category="electronics">
+    <div class="media">
+      <img src="images/image4.avif" />
+      <span class="price-badge">₹1,999</span>
+    </div>
+    <h3>Wireless Headphones</h3>
+    <p class="muted">Comfortable, long battery life — great for travel.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="1">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product card" data-id="2" data-name="Smart Watch" data-price="2499" data-category="electronics">
+    <div class="media">
+      <img src="images/image5.avif" />
+      <span class="price-badge">₹2,499</span>
+    </div>
+    <h3>Smart Watch</h3>
+    <p class="muted">Track activity, notifications, and health metrics.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="2">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product card" data-id="3" data-name="Running Shoes" data-price="3299" data-category="fashion">
+    <div class="media">
+      <img src="images/image6.avif" />
+      <span class="price-badge">₹3,299</span>
+    </div>
+    <h3>Running Shoes</h3>
+    <p class="muted">Lightweight and breathable for everyday runs.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="3">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product card" data-id="4" data-name="Gaming Laptop" data-price="49999" data-category="electronics">
+    <div class="media">
+      <img src="images/image10.avif" />
+      <span class="price-badge">₹49,999</span>
+    </div>
+    <h3>Gaming Laptop</h3>
+    <p class="muted">High-performance laptop for gaming and work.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="4">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 5 -->
+  <div class="product card" data-id="5" data-name="Travel Backpack" data-price="1499" data-category="accessories">
+    <div class="media">
+      <img src="images/image7.avif" />
+      <span class="price-badge">₹1,499</span>
+    </div>
+    <h3>Travel Backpack</h3>
+    <p class="muted">Durable and spacious for all your travel needs.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="5">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 6 -->
+  <div class="product card" data-id="6" data-name="Sunglasses" data-price="899" data-category="accessories">
+    <div class="media">
+      <img src="images/image8.avif" />
+      <span class="price-badge">₹899</span>
+    </div>
+    <h3>Sunglasses</h3>
+    <p class="muted">Stylish and UV-protective for outdoor activities.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="6">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 7 -->
+  <div class="product card" data-id="7" data-name="Insulated Water Bottle" data-price="599" data-category="home">
+    <div class="media">
+      <img src="images/image9.avif" />
+      <span class="price-badge">₹599</span>
+    </div>
+    <h3>Insulated Water Bottle</h3>
+    <p class="muted">Keeps drinks cold for up to 24 hours.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="7">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 8 -->
+  <div class="product card" data-id="8" data-name="Bluetooth Speaker" data-price="1299" data-category="electronics">
+    <div class="media">
+      <img src="images/image11.avif" />
+      <span class="price-badge">₹1,299</span>
+    </div>
+    <h3>Bluetooth Speaker</h3>
+    <p class="muted">Portable speaker with excellent sound quality.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="8">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 9 -->
+  <div class="product card" data-id="9" data-name="Yoga Mat" data-price="799" data-category="sports">
+    <div class="media">
+      <img src="images/image12.avif" />
+      <span class="price-badge">₹799</span>
+    </div>
+    <h3>Yoga Mat</h3>
+    <p class="muted">Non-slip mat for yoga and fitness exercises.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="9">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 10 -->
+  <div class="product card" data-id="10" data-name="Wireless Mouse" data-price="699" data-category="electronics">
+    <div class="media">
+      <img src="images/wirelessmouse.jpg" />
+      <span class="price-badge">₹699</span>
+    </div>
+    <h3>Wireless Mouse</h3>
+    <p class="muted">Ergonomic wireless mouse with long battery life.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="10">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 11 -->
+  <div class="product card" data-id="11" data-name="USB Flash Drive" data-price="499" data-category="electronics">
+    <div class="media">
+      <img src="images/usb.jpg" />
+      <span class="price-badge">₹499</span>
+    </div>
+    <h3>USB Flash Drive</h3>
+    <p class="muted">32GB USB drive for quick data transfer.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="11">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 12 -->
+  <div class="product card" data-id="12" data-name="Smartphone Charger" data-price="299" data-category="electronics">
+    <div class="media">
+      <img src="images/smartphoneCharger.webp" />
+      <span class="price-badge">₹299</span>
+    </div>
+    <h3>Smartphone Charger</h3>
+    <p class="muted">Fast-charging adapter for smartphones.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="12">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 13 -->
+  <div class="product card" data-id="13" data-name="External Hard Drive" data-price="3499" data-category="electronics">
+    <div class="media">
+      <img src="images/external_harddrive.jpg" />
+      <span class="price-badge">₹3,499</span>
+    </div>
+    <h3>External Hard Drive</h3>
+    <p class="muted">1TB portable hard drive for data storage.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="13">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 14 -->
+  <div class="product card" data-id="14" data-name="Cotton T-Shirt" data-price="799" data-category="fashion">
+    <div class="media">
+      <img src="images/cotton_shirt.png" />
+      <span class="price-badge">₹799</span>
+    </div>
+    <h3>Cotton T-Shirt</h3>
+    <p class="muted">Comfortable cotton t-shirt for everyday wear.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="14">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 15 -->
+  <div class="product card" data-id="15" data-name="Denim Jeans" data-price="1999" data-category="fashion">
+    <div class="media">
+      <img src="images/denim_jeans.webp" />
+      <span class="price-badge">₹1,999</span>
+    </div>
+    <h3>Denim Jeans</h3>
+    <p class="muted">Classic denim jeans with a perfect fit.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="15">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 16 -->
+  <div class="product card" data-id="16" data-name="Leather Jacket" data-price="4999" data-category="fashion">
+    <div class="media">
+      <img src="images/leather_jacket.jpg" />
+      <span class="price-badge">₹4,999</span>
+    </div>
+    <h3>Leather Jacket</h3>
+    <p class="muted">Stylish leather jacket for a bold look.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="16">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 17 -->
+  <div class="product card" data-id="17" data-name="Sneakers" data-price="2499" data-category="fashion">
+    <div class="media">
+      <img src="images/sneakers.jpg" />
+      <span class="price-badge">₹2,499</span>
+    </div>
+    <h3>Sneakers</h3>
+    <p class="muted">Comfortable sneakers for casual outings.</p>
+    <div class="card-cta">
+      <button class="btn btn-ghost wishlist-btn">❤️</button>
+      <button class="btn btn-primary add-to-cart" data-id="17">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="col">
+          <a class="logo" href="index.html"
+            ><img src="logo.svg" alt="RetailMart logo" class="logo-img" />
+            <span class="brand-text">Retail<span>Mart</span></span></a
+          >
+          <p class="muted" style="max-width: 320px; margin-top: 8px">
+            Everyday essentials delivered fast. Quality products at great
+            prices.
+          </p>
+        </div>
+
+        <div class="col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Wearables</a></li>
+            <li><a href="#">Shoes</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact</h4>
+          <p class="muted">support@retailmart.example</p>
+          <p class="muted">© 2025 RetailMart</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Notification Popup -->
+    <div id="notificationPopup" class="notification-popup">
+      <div class="notification-content">
+        <div class="notification-icon">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="notification-text">
+          <h3 id="notificationTitle">Success!</h3>
+          <p id="notificationMessage">Operation completed successfully.</p>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

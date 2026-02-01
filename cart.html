@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - RetailMart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner row">
+      <a class="logo" href="index.html"><img src="retailmartlogo.png" alt="RetailMart logo" class="logo-img" aria-hidden="true"> <span class="brand-text">Retail<span>Mart</span></span></a>
+
+      <div class="search-wrap">
+        <form class="search-form" onsubmit="return false;">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <input id="searchInput" type="search" placeholder="Search products..." class="search" aria-label="Search products">
+          <button type="button" class="search-clear" aria-label="Clear search" title="Clear" hidden>✕</button>
+        </form>
+      </div>
+
+      <div class="nav-actions row">
+        <button class="btn btn-ghost cart-btn" onclick="window.location='cart.html'">🛒 <span class="sr-only">Cart</span> <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="cart">
+    <div class="container">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+
+      <div class="cart-summary">
+        <p>Subtotal: <strong id="cartSubtotal">₹0.00</strong></p>
+        <p>Shipping: <strong id="cartShipping">₹0.00</strong></p>
+        <p>Tax (5%): <strong id="cartTax">₹0.00</strong></p>
+        <p>Discount: <strong id="cartDiscount">₹0.00</strong></p>
+        <p>Total: <strong id="cartTotal">₹0.00</strong></p>
+        <div class="discount-input">
+          <input type="text" id="discountCode" placeholder="Enter discount code" />
+          <button id="applyDiscountBtn" class="btn btn-ghost">Apply</button>
+        </div>
+        <div>
+          <button id="clearCartBtn" class="btn btn-ghost">Clear Cart</button>
+          <button id="checkoutBtn" class="btn btn-primary" onclick="window.location='order.html'">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="col">
+        <a class="logo" href="index.html"><img src="retailmartlogo.png" alt="RetailMart logo" class="logo-img"> <span class="brand-text">Retail<span>Mart</span></span></a>
+        <p class="muted" style="max-width:320px; margin-top:8px">Everyday essentials delivered fast. Quality products at great prices.</p>
+      </div>
+
+      <div class="col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Headphones</a></li>
+          <li><a href="#">Wearables</a></li>
+          <li><a href="#">Shoes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Contact</h4>
+        <p class="muted">support@retailmart.example</p>
+        <p class="muted">© 2025 RetailMart</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p><a href="resetpassword.html">Forgot Password?</a></p>
+      <p>Don't have an account? <a href="#" onclick="switchToRegister()">Register here</a></p>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeRegisterModal()">&times;</span>
+      <h2>Register</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerName">Full Name</label>
+          <input type="text" id="registerName" required>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPhone">Phone Number (Optional)</label>
+          <input type="tel" id="registerPhone">
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" required>
+        </div>
+        <div class="form-group">
+          <label for="registerConfirmPassword">Confirm Password</label>
+          <input type="password" id="registerConfirmPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+    </div>
+  </div>
+
+  <!-- Notification Popup -->
+  <div id="notificationPopup" class="notification-popup">
+    <div class="notification-content">
+      <div class="notification-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="notification-text">
+        <h3 id="notificationTitle">Success!</h3>
+        <p id="notificationMessage">Operation completed successfully.</p>
+      </div>
+      <button class="notification-close" onclick="closeNotification()">&times;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

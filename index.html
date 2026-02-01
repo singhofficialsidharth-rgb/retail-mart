@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retail Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner row">
+        <a class="logo" href="index.html"
+          ><img
+            src="retailmartlogo.png"
+            alt="RetailMart logo"
+            class="logo-img"
+            aria-hidden="true"
+          />
+          <span class="brand-text">Retail<span>Mart</span></span></a
+        >
+
+        <div class="search-wrap">
+          <form class="search-form" onsubmit="return false;">
+            <span class="search-icon" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 21l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search products..."
+              class="search"
+              aria-label="Search products"
+            />
+            <button
+              type="button"
+              class="search-clear"
+              aria-label="Clear search"
+              title="Clear"
+              hidden
+            >
+              ✕
+            </button>
+            <div id="searchSuggestions" class="search-suggestions" hidden></div>
+          </form>
+        </div>
+
+        <div class="nav-actions row">
+          <button class="btn btn-ghost" onclick="openLoginModal()">
+            Login
+          </button>
+          <button class="btn btn-primary" onclick="openRegisterModal()">
+            Register
+          </button>
+          <button
+            class="btn btn-ghost cart-btn"
+            onclick="window.location = 'cart.html'"
+          >
+            🛒 <span class="sr-only">Cart</span> <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div
+        class="slideshow-container full-width background-slide"
+        aria-hidden="true"
+      >
+        <div class="slide active">
+          <img src="images/image1.avif" alt="Great Offers" />
+        </div>
+        <div class="slide">
+          <img src="images/image2.avif" alt="Fashion Deals" />
+        </div>
+        <div class="slide">
+          <img src="images/image3.avif" alt="Home Essentials" />
+        </div>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="container banner-inner">
+        <div class="banner-content">
+          <h2>Best Deals on Daily Essentials</h2>
+          <p>
+            Shop smart. Save more.
+            <span class="muted">Free shipping over ₹200</span>
+          </p>
+          <div style="margin-top: 12px">
+            <button
+              class="btn btn-primary"
+              onclick="window.location = 'shop.html'"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products container">
+      <div
+        class="product card"
+        data-id="1"
+        data-name="Wireless Headphones"
+        data-price="1999"
+      >
+        <div class="media">
+          <img src="images/image4.avif" alt="Wireless Headphones" />
+          <span class="price-badge">₹1,999</span>
+        </div>
+        <h3>Wireless Headphones</h3>
+        <p class="muted">Comfortable, long battery life — great for travel.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="1">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="2"
+        data-name="Smart Watch"
+        data-price="2499"
+      >
+        <div class="media">
+          <img src="images/image5.avif" alt="Smart Watch" />
+          <span class="price-badge">₹2,499</span>
+        </div>
+        <h3>Smart Watch</h3>
+        <p class="muted">Track activity, notifications, and health metrics.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="2">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="3"
+        data-name="Running Shoes"
+        data-price="3299"
+      >
+        <div class="media">
+          <img src="images/image6.avif" alt="Running Shoes" />
+          <span class="price-badge">₹3,299</span>
+        </div>
+        <h3>Running Shoes</h3>
+        <p class="muted">Lightweight and breathable for everyday runs.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="3">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="4"
+        data-name="Gaming Laptop"
+        data-price="49999"
+      >
+        <div class="media">
+          <img src="images/image10.avif" alt="Gaming Laptop" />
+          <span class="price-badge">₹49,999</span>
+        </div>
+        <h3>Gaming Laptop</h3>
+        <p class="muted">High-performance laptop for gaming and work.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="4">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="5"
+        data-name="Travel Backpack"
+        data-price="1499"
+      >
+        <div class="media">
+          <img src="images/image7.avif" alt="Travel Backpack" />
+          <span class="price-badge">₹1,499</span>
+        </div>
+        <h3>Travel Backpack</h3>
+        <p class="muted">Durable and spacious for all your travel needs.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="5">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="6"
+        data-name="Sunglasses"
+        data-price="899"
+      >
+        <div class="media">
+          <img src="images/image8.avif" alt="Sunglasses" />
+          <span class="price-badge">₹899</span>
+        </div>
+        <h3>Sunglasses</h3>
+        <p class="muted">Stylish and UV-protective for outdoor activities.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="6">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="product card"
+        data-id="7"
+        data-name="Insulated Water Bottle"
+        data-price="599"
+      >
+        <div class="media">
+          <img src="images/image9.avif" alt="Insulated Water Bottle" />
+          <span class="price-badge">₹599</span>
+        </div>
+        <h3>Insulated Water Bottle</h3>
+        <p class="muted">Keeps drinks cold for up to 24 hours.</p>
+        <div class="card-cta">
+          <button class="btn btn-ghost wishlist-btn" title="Add to wishlist">
+            ❤️
+          </button>
+          <button class="btn btn-primary add-to-cart" data-id="7">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="col">
+          <a class="logo" href="index.html"
+            ><img
+              src="retailmartlogo.png"
+              alt="RetailMart logo"
+              class="logo-img"
+            />
+            <span class="brand-text">Retail<span>Mart</span></span></a
+          >
+          <p class="muted" style="max-width: 320px; margin-top: 8px">
+            Everyday essentials delivered fast. Quality products at great
+            prices.
+          </p>
+        </div>
+
+        <div class="col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Wearables</a></li>
+            <li><a href="#">Shoes</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h4>Contact</h4>
+          <p class="muted">support@retailmart.example</p>
+          <p class="muted">© 2025 RetailMart</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p><a href="resetpassword.html">Forgot Password?</a></p>
+        <p>
+          Don't have an account?
+          <a href="#" onclick="switchToRegister()">Register here</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Register</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Full Name</label>
+            <input type="text" id="registerName" required />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="registerPhone">Phone Number (Optional)</label>
+            <input type="tel" id="registerPhone" />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" required />
+          </div>
+          <div class="form-group">
+            <label for="registerConfirmPassword">Confirm Password</label>
+            <input type="password" id="registerConfirmPassword" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p>
+          Already have an account?
+          <a href="#" onclick="switchToLogin()">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Notification Popup -->
+    <div id="notificationPopup" class="notification-popup">
+      <div class="notification-content">
+        <div class="notification-icon">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="notification-text">
+          <h3 id="notificationTitle">Success!</h3>
+          <p id="notificationMessage">Operation completed successfully.</p>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
